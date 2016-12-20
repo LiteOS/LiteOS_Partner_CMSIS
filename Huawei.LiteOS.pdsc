@@ -6,6 +6,7 @@
   <description>Huawei LiteOS kernel Software Pack</description>
   <url>https://github.com/LITEOS/CMSIS/blob/master/</url>
   <supportContact></supportContact>
+  <license>Docs\license.txt</license>
   <!-- optional license file -->
   <!-- 
   <license>Docs\license.txt</license>
@@ -79,19 +80,19 @@
     <component Cclass="CMSIS" Cgroup="LiteOS" Csub="LiteOSCore" Cversion="1.0.0" condition="Device startup LiteOS">
       <description>CMSIS-LiteOS os API for Cortex-M4-</description>
       <files>
-        <file category="doc"    name="Docs/HuaweiLiteOS.htm"/>
-        <file category="header" name="LiteOS/cmsis_armcc.h"/>
-		<file category="header" name="LiteOS/cmsis_os.h"/>
-        <file category="header" name="LiteOS/include/los_typedef.h"/>
-		<file category="header" name="LiteOS/include/los_printf.h"/>
-		<file category="header" name="LiteOS/include/los_config.h"/>
-		<file category="header" name="LiteOS/include/los_builddef.h"/>
-		<file category="header" name="LiteOS/core_cm4.h" attr="config" />
-		<file category="header" name="LiteOS/core_cmFunc.h"/>
-		<file category="header" name="LiteOS/core_cmInstr.h"/>
-		<file category="header" name="LiteOS/core_cmSimd.h"/>
-        <file category="library" name="LiteOS/HuaweiLiteOS.lib" condition="Device startup LiteOS"  version="1.0.0"/>
-		<file category="doc" name="LiteOS/ReadMe.txt" attr="config"/>
+        <file category="doc"    name="Docs\HuaweiLiteOS.htm"/>
+        <file category="header" name="LiteOS\cmsis_armcc.h"/>
+		<file category="header" name="LiteOS\cmsis_os.h"/>
+        <file category="header" name="LiteOS\include\los_typedef.h"/>
+		<file category="header" name="LiteOS\include\los_printf.h"/>
+		<file category="header" name="LiteOS\include\los_config.h"/>
+		<file category="header" name="LiteOS\include\los_builddef.h"/>
+		<file category="header" name="LiteOS\core_cm4.h" attr="config" />
+		<file category="header" name="LiteOS\core_cmFunc.h"/>
+		<file category="header" name="LiteOS\core_cmInstr.h"/>
+		<file category="header" name="LiteOS\core_cmSimd.h"/>
+        <file category="library" name="LiteOS\HuaweiLiteOS.lib" condition="Device startup LiteOS"  version="1.0.0"/>
+		<file category="doc" name="LiteOS\ReadMe.txt" attr="config"/>
       </files>
     </component>
   </components>
