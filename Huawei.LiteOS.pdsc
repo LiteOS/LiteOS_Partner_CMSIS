@@ -1,105 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <package schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
-  <vendor>Huawei</vendor>
-  <name>LiteOS</name>
-  <description>Huawei LiteOS kernel Software Pack</description>
-  <url>https://github.com/LITEOS/CMSIS/blob/master/</url>
-  <supportContact></supportContact>
-  <license>Docs\license.txt</license>
-  <!-- optional license file -->
-  <!-- 
-  <license>Docs\license.txt</license>
-  <license>
-  </license>
-  -->
+	<vendor>Huawei</vendor>
+	<name>LiteOS</name>
+	<description>Huawei LiteOS kernel Software Pack</description>
+	<url>https://github.com/LITEOS/CMSIS/blob/master/</url>
+	<supportContact></supportContact>
+	<license>Docs\license.txt</license>
+	<!-- optional license file -->
+	<!-- 
+	<license>Docs\license.txt</license>
+	<license>
+	</license>
+	-->
   
-  <releases>
-    <release version="1.0.0" date="2016-12-20">
-      Huawei LiteOS Initial version
-    </release>
-  </releases>
+	<releases>
+		<release version="1.0.0" date="2016-12-20">
+		Huawei LiteOS Initial version
+		</release>
+	</releases>
 
-  <keywords>
-    <!-- keywords for indexing -->
-    <keyword>HuaweiLiteOS</keyword>
-	<keyword>Huawei LiteOS Kernel</keyword>
-	<keyword>LiteOS</keyword>
-  </keywords>
+	<keywords>
+	<!-- keywords for indexing -->
+		<keyword>HuaweiLiteOS</keyword>
+		<keyword>Huawei LiteOS Kernel</keyword>
+		<keyword>LiteOS</keyword>
+	</keywords>
 
-  <!-- apis section (optional - for Application Programming Interface descriptions) -->
-  <!-- 
-  <apis>
-  </apis>
-  -->
+	<!-- apis section (optional - for Application Programming Interface descriptions) -->
+	<!-- 
+	<apis>
+	</apis>
+	-->
 
-  <!-- boards section (mandatory for Board Support Packs) -->
-  <!-- 
-  <boards>
-  </boards>
-  -->
+	<!-- boards section (mandatory for Board Support Packs) -->
+	<!-- 
+	<boards>
+	</boards>
+	-->
 
-  <!-- devices section (mandatory for Device Family Packs) -->
-  <!--
-  <devices>
-  </devices>
-  -->
+	<!-- devices section (mandatory for Device Family Packs) -->
+	<!--
+	<devices>
+	</devices>
+	-->
 
-  <!-- examples section (optional for all Software Packs)-->
-  <!--
-  <examples>
-  </examples>
-  -->
+	<!-- examples section (optional for all Software Packs)-->
+	<!--
+	<examples>
+	</examples>
+	-->
   
-  <!-- conditions section (optional for all Software Packs)-->
-  <!--
-  <conditions>
-  </conditions>
-  -->
-  <conditions> 
-  <condition id="ARM Compiler">
-    <require Tcompiler="ARMCC"/>
-  </condition>
-  <condition id="CM4">
-    <description>Cortex-M4 based device</description>
-    <require condition="ARM Compiler"/> 
-    <accept  Dcore="Cortex-M4"/>
-  </condition>
-  <condition id="Device startup LiteOS">
-    <description>CMSIS Core with LiteOS for Cortex-M4 processor</description>
-	<require Dcore="Cortex-M4"/>
-    <require Cclass="Device" Cgroup="STM32F429LiteOS"/>
-  </condition>
-</conditions>
-  <!-- component section (optional for all Software Packs)-->
-  <!--
-  <components>
-  </components>
-  -->
-  <components>
-    <component Cclass="CMSIS" Cgroup="LiteOS" Csub="LiteOSCore" Cversion="1.0.0" condition="Device startup LiteOS">
-      <description>CMSIS-LiteOS os API for Cortex-M4-</description>
-      <files>
-        <file category="doc"    name="Docs\HuaweiLiteOS.htm"/>
-        <file category="header" name="LiteOS\cmsis_armcc.h"/>
-		<file category="header" name="LiteOS\cmsis_os.h"/>
-        <file category="header" name="LiteOS\include\los_typedef.h"/>
-		<file category="header" name="LiteOS\include\los_printf.h"/>
-		<file category="header" name="LiteOS\include\los_config.h"/>
-		<file category="header" name="LiteOS\include\los_builddef.h"/>
-		<file category="header" name="LiteOS\core_cm4.h" attr="config" />
-		<file category="header" name="LiteOS\core_cmFunc.h"/>
-		<file category="header" name="LiteOS\core_cmInstr.h"/>
-		<file category="header" name="LiteOS\core_cmSimd.h"/>
-        <file category="library" name="LiteOS\HuaweiLiteOS.lib" condition="Device startup LiteOS"  version="1.0.0"/>
-		<file category="doc" name="LiteOS\ReadMe.txt" attr="config"/>
-      </files>
-    </component>
-  </components>
-  <!-- optional taxonomy section for defining new component Class and Group names -->
-  <!--
-  <taxonomy>
-  </taxonomy>
-  -->
-  
+	<!-- conditions section (optional for all Software Packs)-->
+	<!--
+	<conditions>
+	</conditions>
+	-->
+	<conditions> 
+		<condition id="ARM Compiler">
+		<require Tcompiler="ARMCC"/>
+	</condition>
+	<condition id="CM4">
+		<description>Cortex-M4 based device</description>
+		<require condition="ARM Compiler"/> 
+		<accept  Dcore="Cortex-M4"/>
+	</condition>
+	<condition id="Device startup LiteOS">
+		<description>CMSIS Core with LiteOS for Cortex-M4 processor</description>
+		<require Dcore="Cortex-M4"/>
+		<require Cclass="Device" Cgroup="STM32F429LiteOS"/>
+	</condition>
+	</conditions>
+	<!-- component section (optional for all Software Packs)-->
+	<!--
+	<components>
+	</components>
+	-->
+	<components>
+		<component Cclass="CMSIS" Cgroup="LiteOS" Csub="LiteOSCore" Cversion="1.0.0" condition="Device startup LiteOS">
+			<description>CMSIS-LiteOS os API for Cortex-M4-</description>
+			<files>
+				<file category="doc"    name="Docs\HuaweiLiteOS.htm"/>
+				<file category="header" name="LiteOS\cmsis_armcc.h"/>
+				<file category="header" name="LiteOS\cmsis_os.h"/>
+				<file category="header" name="LiteOS\include\los_typedef.h"/>
+				<file category="header" name="LiteOS\include\los_printf.h"/>
+				<file category="header" name="LiteOS\include\los_config.h"/>
+				<file category="header" name="LiteOS\include\los_builddef.h"/>
+				<file category="header" name="LiteOS\core_cm4.h" attr="config" />
+				<file category="header" name="LiteOS\core_cmFunc.h"/>
+				<file category="header" name="LiteOS\core_cmInstr.h"/>
+				<file category="header" name="LiteOS\core_cmSimd.h"/>
+				<file category="library" name="LiteOS\HuaweiLiteOS.lib" condition="Device startup LiteOS"  version="1.0.0"/>
+				<file category="doc" name="LiteOS\ReadMe.txt" attr="config"/>
+			</files>
+		</component>
+	</components>
+	<!-- optional taxonomy section for defining new component Class and Group names -->
+	<!--
+	<taxonomy>
+	</taxonomy>
+	--> 
 </package>
