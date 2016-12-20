@@ -4,7 +4,7 @@
   <vendor>Huawei</vendor>
   <name>LiteOS</name>
   <description>Huawei LiteOS kernel Software Pack</description>
-  <url>https://github.com/LITEOS/CMSIS/blob/master</url>
+  <url>https://github.com/LITEOS/CMSIS/blob/master/</url>
   <supportContact></supportContact>
   <license>Docs\license.txt</license>
   <!-- optional license file -->
