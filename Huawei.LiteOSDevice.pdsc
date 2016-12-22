@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Huawei</vendor>
+  <name>LiteOSDevice</name>
+  <description>Huawei LiteOS Device stm32f429 startup Software Pack</description>
+  <url></url>
+  <supportContact></supportContact>
+  <license>Docs\license.txt</license>
+  <!-- optional license file -->
+  <!-- 
+  <license>
+  </license>
+  -->
+  
+  <releases>
+    <release version="1.0.0" date="2016-12-20">
+       Huawei LiteOS Initial version
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>HuaweiLiteOS</keyword>
+	<keyword>Huawei LiteOS startup</keyword>
+	<keyword>LiteOS</keyword>
+  </keywords>
+
+  <!-- apis section (optional - for Application Programming Interface descriptions) -->
+  <!-- 
+  <apis>
+  </apis>
+  -->
+
+  <!-- boards section (mandatory for Board Support Packs) -->
+  <!-- 
+  <boards>
+  </boards>
+  -->
+
+  <!-- devices section (mandatory for Device Family Packs) -->
+  <!--
+  <devices>
+  </devices>
+  -->
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+  <!--
+  <conditions>
+  </conditions>
+  -->
+  
+  <!-- component section (optional for all Software Packs)-->
+  <!--
+  <components>
+  </components>
+  -->
+  <components>
+    <component Cclass="Device" Cgroup="STM32F429LiteOS" Csub="startup" Cversion="1.0.0">
+      <description>Device-LiteOS device startup for Cortex-M4</description>
+      <files>
+       <file category="doc"    name="Docs/HuaweiLiteOS.htm"/>
+       <file category="doc"    name="Docs/HuaweiLiteOS_CortexM.sct" attr="config"/>
+	   <file category="header" name="STM32F429/stm32f4xx.h"/>
+	   <file category="header" name="STM32F429/stm32f429xx.h"/>
+	   <file category="header" name="STM32F429/system_stm32f4xx.h"/>
+	   <file category="header" name="STM32F429/stm32f4xx_hal_conf.h"/>
+       <file category="source" name="STM32F429/los_vendor.s" attr="config" version="1.0.0"/>
+       <file category="source" name="STM32F429/los_dispatch.s" attr="config" version="1.0.0"/>
+       <file category="source" name="STM32F429/system_stm32f4xx.c" attr="config" version="1.0.0"/>
+       
+      </files>
+    </component>
+  </components>
+  <!-- optional taxonomy section for defining new component Class and Group names -->
+  <!--
+  <taxonomy>
+  </taxonomy>
+  -->
+  
+</package>
