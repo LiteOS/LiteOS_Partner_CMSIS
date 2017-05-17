@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.4" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+	<vendor>Huawei</vendor>
+	<name>LiteOS</name>
+	<description>Huawei LiteOS kernel Software Pack</description>
+	<url>http://obs.cn-north-1.myhwclouds.com/iot-liteos/</url>
+	<supportContact></supportContact>
+	<license>Docs\license.txt</license>
+	<!-- optional license file -->
+	<!-- 
+	<license>Docs\license.txt</license>
+	<license>
+	</license>
+	-->
+  
+	<releases>
+		<release version="1.2.0" date="2017-02-17">
+		Updated code structure. 
+		Added Cortex-M0 and Cortex-M3 support.
+		</release>
+		<release version="1.0.0" date="2017-01-06">
+		Huawei LiteOS Initial version.
+		</release>
+	</releases>
+	
+
+	<keywords>
+	<!-- keywords for indexing -->
+		<keyword>Huawei</keyword>
+		<keyword>Huawei LiteOS Kernel</keyword>
+		<keyword>LiteOS</keyword>
+	</keywords>
+
+	<!-- apis section (optional - for Application Programming Interface descriptions) -->
+	<!-- 
+	<apis>
+	</apis>
+	-->
+
+	<!-- boards section (mandatory for Board Support Packs) -->
+	<!-- 
+	<boards>
+	</boards>
+	-->
+
+	<!-- devices section (mandatory for Device Family Packs) -->
+	<!--
+	<devices>
+	</devices>
+	-->
+
+	<!-- examples section (optional for all Software Packs)-->
+	<!--
+	<examples>
+	</examples>
+	-->
+
+	<examples>
+	  <example name="LiteOS Example CM0" doc="Abstract.txt" folder="LiteOSDemoCM0">
+		<description>CMSIS-LiteOS based example</description>
+		<board vendor="NXP" name="LPC824 LPCXpresso"/>
+		<project>
+		  <environment name="uv" load="LiteOSDemo.uvprojx"/>
+		</project>
+		<attributes>
+		  <component Cclass="CMSIS"     Cgroup="CORE"/>
+		  <component Cclass="Device"    Cgroup="Startup"/>
+		  <component Cclass="CMSIS"     Cgroup="RTOS"/>
+		  <keyword>Getting Started</keyword>
+		</attributes>
+	  </example>
+	  <example name="LiteOS Example CM3" doc="Abstract.txt" folder="LiteOSDemoCM3">
+		<description>CMSIS-LiteOS based example</description>
+		<board vendor="GigaDevice" name="GD321x0C-START"/>
+		<project>
+		  <environment name="uv" load="LiteOSDemo.uvprojx"/>
+		</project>
+		<attributes>
+		  <component Cclass="CMSIS"     Cgroup="CORE"/>
+		  <component Cclass="Device"    Cgroup="Startup"/>
+		  <component Cclass="CMSIS"     Cgroup="RTOS"/>
+		  <keyword>Getting Started</keyword>
+		</attributes>
+	  </example>
+	  <example name="LiteOS Example CM4" doc="Abstract.txt" folder="LiteOSDemoCM4">
+		<description>CMSIS-LiteOS based example</description>
+		<board vendor="STMicroelectronics" name="STM32F429I-Discovery"/>
+		<project>
+		  <environment name="uv" load="LiteOSDemo.uvprojx"/>
+		</project>
+		<attributes>
+		  <component Cclass="CMSIS"     Cgroup="CORE"/>
+		  <component Cclass="Device"    Cgroup="Startup"/>
+		  <component Cclass="CMSIS"     Cgroup="RTOS"/>
+		  <keyword>Getting Started</keyword>
+		</attributes>
+	  </example>
+	</examples>
+
+	<!-- conditions section (optional for all Software Packs)-->
+	<!--
+	<conditions>
+	</conditions>
+	-->
+	<conditions> 
+		<condition id="ARM Compiler">
+		<require Tcompiler="ARMCC"/>
+	</condition>
+	<condition id="CM0, CM0+">
+		<description>Cortex-M0, Cortex-M0+ based device</description>
+		<require condition="ARM Compiler"/> 
+		<accept  Dcore="Cortex-M0"/>
+		<accept  Dcore="Cortex-M0+"/>
+	</condition>
+	<condition id="CM3">
+		<description>Cortex-M3 based device</description>
+		<require condition="ARM Compiler"/> 
+		<accept  Dcore="Cortex-M3"/>
+	</condition>
+	<condition id="CM4">
+		<description>Cortex-M4 based device</description>
+		<require condition="ARM Compiler"/> 
+		<accept  Dcore="Cortex-M4"/>
+	</condition>
+	<condition id="Device startup LiteOS CM0, CM0+">
+		<description>CMSIS Core with LiteOS for Cortex-M0, Cortex-M0+ processor</description>
+		<accept  Dcore="Cortex-M0"/>
+		<accept  Dcore="Cortex-M0+"/>
+		<require Cclass="CMSIS" Cgroup="CORE"/>
+		<require Cclass="Device" Cgroup="Startup"/>
+	</condition>
+	<condition id="Device startup LiteOS CM3">
+		<description>CMSIS Core with LiteOS for Cortex-M3 processor</description>
+		<require Dcore="Cortex-M3"/>
+		<require Cclass="CMSIS" Cgroup="CORE"/>
+		<require Cclass="Device" Cgroup="Startup"/>
+	</condition>
+	<condition id="Device startup LiteOS CM4">
+		<description>CMSIS Core with LiteOS for Cortex-M4 processor</description>
+		<require Dcore="Cortex-M4"/>
+		<require Cclass="CMSIS" Cgroup="CORE"/>
+		<require Cclass="Device" Cgroup="Startup"/>
+	</condition>
+	</conditions>
+	<!-- component section (optional for all Software Packs)-->
+	<!--
+	<components>
+	</components>
+	-->
+	<components>
+		<component Cclass="CMSIS" Cgroup="RTOS" Csub="LiteOS" Cversion="1.2.0"  Capiversion="1.2"  condition="Device startup LiteOS CM0, CM0+">
+			<description>CMSIS-RTOS LiteOS implementation for Cortex-M0, Cortex-M0+</description>
+			<files>
+				<file category="doc"    name="Docs\HuaweiLiteOS.htm"/>
+				<file category="header" name="Lib\cm0\cmsis_os.h"/>
+				<file category="header" name="Lib\cm0\cmsis_los.h" attr="config" />
+				<file category="source" name="Lib\cm0\los_dispatch.s" attr="config" />
+				<file category="source" name="Lib\cm0\los_bsp_adapter.c" attr="config" />
+				<file category="linkerScript" name="Lib\cm0\LiteOS_CM0.sct" attr="config" />
+				<file category="library" name="Lib\cm0\HuaweiLiteOS.lib"  version="1.2.0"/>
+			</files>
+		</component>
+	</components>
+	<components>
+		<component Cclass="CMSIS" Cgroup="RTOS" Csub="LiteOS" Cversion="1.2.0"  Capiversion="1.2"  condition="Device startup LiteOS CM3">
+			<description>CMSIS-RTOS LiteOS implementation for Cortex-M3</description>
+			<files>
+				<file category="doc"    name="Docs\HuaweiLiteOS.htm"/>
+				<file category="header" name="Lib\cm3\cmsis_os.h"/>
+				<file category="header" name="Lib\cm3\cmsis_los.h" attr="config" />
+				<file category="source" name="Lib\cm3\los_dispatch.s" attr="config" />
+				<file category="source" name="Lib\cm3\los_bsp_adapter.c" attr="config" />
+				<file category="linkerScript" name="Lib\cm3\LiteOS_CM3.sct" attr="config" />
+				<file category="library" name="Lib\cm3\HuaweiLiteOS.lib"  version="1.2.0"/>
+			</files>
+		</component>
+	</components>
+	<components>
+		<component Cclass="CMSIS" Cgroup="RTOS" Csub="LiteOS" Cversion="1.2.0"  Capiversion="1.2"  condition="Device startup LiteOS CM4">
+			<description>CMSIS-RTOS LiteOS implementation for Cortex-M4</description>
+			<files>
+				<file category="doc"    name="Docs\HuaweiLiteOS.htm"/>
+				<file category="header" name="Lib\cm4\cmsis_os.h"/>
+				<file category="header" name="Lib\cm4\cmsis_los.h" attr="config" />
+				<file category="source" name="Lib\cm4\los_dispatch.s" attr="config" />
+				<file category="source" name="Lib\cm4\los_bsp_adapter.c" attr="config" />
+				<file category="linkerScript" name="Lib\cm4\LiteOS_CM4.sct" attr="config" />
+				<file category="library" name="Lib\cm4\HuaweiLiteOS.lib"  version="1.2.0"/>
+			</files>
+		</component>
+	</components>
+	<!-- optional taxonomy section for defining new component Class and Group names -->
+	<!--
+	<taxonomy>
+	</taxonomy>
+	--> 
+</package>
